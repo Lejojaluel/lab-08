@@ -1,0 +1,23 @@
+empty list: 
+filled list: 
+list length = 0
+filled stack: 17, 0, 6, 12, 18, 1, 7, 13, 19, 2, 8, 14, 20, 3, 9, 15, 21, 4, 10, 16, 22, 5, 11
+stack size = 23
+remove did not find -4
+remove did not find 0
+remove did not find 4
+remove did not find 8
+remove did not find 12
+remove did not find 16
+remove did not find 20
+remove did not find 24
+list after removes: 
+list length = 0
+pop: 0
+pop: 6
+pop: 12
+pop: 18
+pop: 1
+stack after pops: 1, 7, 13, 19, 2, 8, 14, 20, 3, 9, 15, 21, 4, 10, 16, 22, 5, 11
+stack size = 18
+list after reverse: 
