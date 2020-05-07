@@ -1,9 +1,8 @@
 /******************/
 /* Leroy Valencia */
-/*    04/20/20    */
+/*    05/7/20    */
 /*   CS-241-006   */
 /******************/
-
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,25 +19,27 @@ struct ListNode* createNode(int data)
 
 struct ListNode* insertSorted(struct ListNode* head, int data)
 {
-  struct ListNode* result;
-  struct ListNode* current = &temp;
-}
-
-struct ListNode* sortedInsert(struct ListNode* head, int data)
-{
+  struct ListNode* current; 
   struct ListNode* newNode = (struct ListNode*)malloc(sizeof(struct ListNode*));
-  struct ListNode* temp;
-  struct ListNode* current = &temp;
-  newNode->data;
-  temp->next = head;
+  newNode->data = data; 
+  if (head == NULL || (head)->data >= newNode->data) 
+  { 
+      newNode->next = head; 
+      head = newNode; 
+  } 
+  else
+  { 
+      current = head; 
+      while (current->next != NULL && current->next->data < newNode->data) 
+      { 
+          current = current->next; 
+      } 
+      newNode->next = current->next; 
+      current->next = newNode; 
+  } 
+return head;
 
-  while(current->next != NULL && current->next->data < data)
-  {
-    current = current->next;
-  }
-  newNode->next = current->next;
-  current->next = newNode;
-  head = temp->next;
+
 }
 
 int removeItem(struct ListNode** headRef, int data)
@@ -93,8 +94,9 @@ int popStack(struct ListNode** headRef)
 int listLength(struct ListNode* head)
 {
   int count;
+  struct ListNode* temp;
   count = 0;
-  struct ListNode* temp = head;
+  temp = head;
   while(temp != NULL)
   {
     count++;
